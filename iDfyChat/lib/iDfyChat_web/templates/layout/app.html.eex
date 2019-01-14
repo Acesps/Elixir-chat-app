@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>IDfyChat · Phoenix Framework</title>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+  </head>
+  <body>
+    
+    <header>
+      <section class="container">
+        <img align="right" src="<%= Routes.static_path(@conn, "/images/idfy.jpg") %>" height="96" width="96" alt="idfy image"/ >
+        <h1 align="left">Welcome to IDfy Chat</h1>
+      </section>
+      <h6 style="padding-left: 260px">(Think before you type!Everymsg goes into <br> the database and is stored in unencrpted manner)</h6> 
+    </header>
+    <main role="main" class="container">
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <div>
+        <%= render @view_module, @view_template, assigns %>
+      </div>
+    </main>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>
